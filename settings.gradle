@@ -1,0 +1,5 @@
+rootProject.name = "StateChangeApplication"
+include ':app'
+include ':annotationVerification'
+include ':logger'
+include ':dataBiningLibrary'
