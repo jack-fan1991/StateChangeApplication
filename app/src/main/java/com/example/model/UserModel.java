@@ -13,6 +13,7 @@ public class UserModel extends BaseAnnotationEntity<UserModel>{
     public int mode = 1;
 
     public UserModel() {
+        super();
     }
 
     public UserModel(String account, String password) {

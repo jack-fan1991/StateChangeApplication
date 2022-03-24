@@ -1,17 +1,20 @@
-package com.stateManger;
+package com.stateManger.test;
 
 import com.example.annotationverification.BaseAnnotationEntity;
 import com.example.annotationverification.IGeneric;
 import com.example.annotationverification.utils.LoggerTagManger;
 import com.example.logger.Logger;
 import com.example.utils.DebugUtils;
+import com.stateManger.APP_STATE_TYPE;
+import com.stateManger.BaseOnStateChangeListener;
+import com.stateManger.StateEntity;
 
 /**  泛型類可繼承AbstractAnnotationEntity 提供反射equals 方法及反射更新方法
- *
+ *   使用泛動態產生state stata必須有無參建構子
  * */
 
 
-public abstract  class AbstractState<T extends BaseAnnotationEntity<T>>   {
+public abstract  class AbstractStateV3<T extends BaseAnnotationEntity<T>> implements IGeneric<T> {
 
     private boolean isDirty =false;
     protected BaseOnStateChangeListener listener;
@@ -19,13 +22,10 @@ public abstract  class AbstractState<T extends BaseAnnotationEntity<T>>   {
     protected T state;
     protected StateEntity stateEntity =new StateEntity();
 
-    public AbstractState(APP_STATE_TYPE tag) {
+    public AbstractStateV3(APP_STATE_TYPE tag) {
         this.tag =tag;
-        state =create();
+        genericCreate();
     }
-
-
-    protected abstract T create() ;
 
     public void setListener(BaseOnStateChangeListener listener) {
         this.listener = listener;

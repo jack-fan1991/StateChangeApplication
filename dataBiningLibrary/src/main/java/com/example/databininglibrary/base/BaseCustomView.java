@@ -16,7 +16,6 @@ import androidx.lifecycle.LifecycleOwner;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-import tw.com.gsh.biofit.function.CommonFunction;
 
 /**
  * 可將此子類實現設定onTouch監聽後透過依賴 ICustomViewActionListener 進行事件轉拋
@@ -57,7 +56,6 @@ public abstract class BaseCustomView<DATA_BINDING extends ViewDataBinding, VIEW_
         float eventY = event.getY();
         float viewWidth = v.getWidth();
         float viewHeight = v.getHeight();
-        timestamp = System.currentTimeMillis();
         return (eventX >= 0 && eventX <= viewWidth) &&
                 (eventY >= 0 && eventY <= viewHeight);
     }

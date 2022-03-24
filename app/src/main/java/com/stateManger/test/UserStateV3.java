@@ -1,16 +1,14 @@
-package com.stateManger;
+package com.stateManger.test;
 
 import com.example.model.UserModel;
+import com.stateManger.APP_STATE_TYPE;
+import com.stateManger.test.AbstractStateV3;
 
 
-public class UserState extends AbstractState<UserModel> {
+public class UserStateV3 extends AbstractStateV3<UserModel> {
 
-    @Override
-    protected UserModel create() {
-        return new UserModel("","");
-    }
 
-    UserState(APP_STATE_TYPE tag ) {
+    public UserStateV3(APP_STATE_TYPE tag ) {
         super(tag);
 
     }
